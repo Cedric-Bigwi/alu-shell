@@ -1,3 +1,2 @@
 #!/bin/bash
-[ "$(stat -c %U hello)" = "guillaume" ] && echo chown vincent hello > temp.sh
-. ./temp.sh
+[ "$(stat -c %U hello)" = "guillaume" ] && echo chown vincent hello > temp.sh . ./temp.sh
