@@ -1,2 +1,2 @@
 #!/bin/bash
-test "$(stat -c %U hello)" = "guillaume" && exec chown vincent hello
+chown --from=guillaume vincent hello
