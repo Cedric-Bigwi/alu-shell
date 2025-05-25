@@ -1,2 +1,3 @@
-#!/bin/bash case $(stat -c %U hello) in guillaume) chown vincent hello
-esac
+#!/bin/bash
+[ "$(stat -c %U hello)" = "guillaume" ] && echo chown vincent hello > temp.sh
+. ./temp.sh
