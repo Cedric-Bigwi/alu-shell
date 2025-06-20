@@ -1,14 +1,24 @@
 #!/usr/bin/env bash
-# Create pid file, run indefinitely, handle signals
+# Creates a PID file and handles signals while printing messages indefinitely
 
-echo "$$" > /var/run/myscript.pid
+PIDFILE="/var/run/myscript.pid"
 
-trap 'echo "I hate the kill command"' SIGTERM
-trap 'echo "Y U no love me?!"' SIGINT
-trap 'rm -f /var/run/myscript.pid; exit 0' SIGQUIT SIGTERM
+# Write own PID to file
+echo $$ > "$PIDFILE"
 
-while true
-do
-  echo "To infinity and beyond"
-  sleep 2
+# Function to clean up and exit on SIGQUIT or SIGTERM
+cleanup() {
+    rm -f "$PIDFILE"
+    exit 0
+}
+
+# Handle signals
+trap 'echo "I hate the kill command"; cleanup' SIGTERM
+trap 'echo "Y U no love me?!";' SIGINT
+trap 'cleanup' SIGQUIT
+
+# Infinite loop printing message every second
+while true; do
+    echo "To infinity and beyond"
+    sleep 1
 done
