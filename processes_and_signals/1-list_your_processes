@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# Display a list of all running processes for all users with hierarchy
+# List all processes showing UID, start time, and command
 
-ps -ef --forest
+ps -eo uid,start_time,command --forest
