@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(( ${WATER//[^0-9]/} + ${STIR//[^0-9]/} ))
+echo $(( $(echo "${WATER//./}" | fold -w1 | nl -v0 | while read i c; do echo $(( $(printf "%d" "'${c}") - 119 )); done | awk '{s=s*5+$1} END{print s}') + $(echo "${STIR//./}" | fold -w1 | nl -v0 | while read i c; do echo $(( $(printf "%d" "'${c}") - 115 )); done | awk '{s=s*4+$1} END{print s}') ))
