@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# Display all running processes for all users with hierarchy
+# Display all processes with full start time and command tree
 
-ps -ef --forest
+ps -eo user,lstart,command --forest | tail -n +2
