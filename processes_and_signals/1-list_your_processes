@@ -1,4 +1,14 @@
 #!/usr/bin/env bash
-# This script lists all processes in the expected format
+# Display processes with user, started time (HH:MM:SS), command, and show hierarchy
 
-ps -eo user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command --forest
+# Print the header line exactly as required
+echo "USER STARTED COMMAND"
+
+# Get processes with user, lstart (full start date/time), command, show hierarchy
+# Extract HH:MM:SS from lstart (which is 4th word on that line)
+ps -eo user,lstart,command --forest | tail -n +2 | while read -r user day mon date time year rest; do
+    # Extract only HH:MM:SS from time
+    hhmmss=${time}
+    # Print user, started (HH:MM:SS), and command (rest)
+    echo "$user $hhmmss $rest"
+done
