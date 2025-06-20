@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
-# Display all processes with full start time and command tree
+# Lists all processes with user, start time (HH:MM:SS), and command with process tree
 
-ps -eo user,lstart,command --forest | tail -n +2
+ps -eo user,lstart,command --forest | tail -n +2 | while read -r user _ _ _ time _ rest; do
+    echo "$user $time $rest"
+done
