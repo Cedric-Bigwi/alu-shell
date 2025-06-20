@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-# List all processes showing UID, start time, and command
+# 1-list_your_processes
+# Show all processes for all users, with user-oriented columns, and process tree
 
-ps -eo uid,start_time,command --forest
+ps -e -o user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command --forest
