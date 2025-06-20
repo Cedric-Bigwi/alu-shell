@@ -1,1 +1,2 @@
-find . \( -type f -empty -o -type d -empty \) -printf "%f\n"
+#!/bin/bash
+find . -empty -printf "%f\n"
