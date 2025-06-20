@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# 1-list_your_processes
-# Show all processes for all users, with user-oriented columns, and process tree
+# script that displays all running processes.
+# Shows all processes, for all users
 
-ps -e -o user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command --forest
+ps -auxf
