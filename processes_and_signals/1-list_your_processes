@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-# Lists all processes with user, start time (HH:MM:SS), and command with process tree
+# Display a list of all running processes for all users with hierarchy
 
-ps -eo user,lstart,command --forest | tail -n +2 | while read -r user _ _ _ time _ rest; do
-    echo "$user $time $rest"
-done
+ps -ef --forest
