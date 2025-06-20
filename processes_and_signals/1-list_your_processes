@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# This script lists all processes in a user-oriented hierarchical format with full STARTED time
+# This script lists all processes in a user-oriented hierarchical format with STARTED time
 
-ps -eo user,pid,%cpu,%mem,vsz,rss,tty,stat,lstart,time,command --forest
+ps -eo user,pid,%cpu,%mem,vsz,rss,tty,stat,etimes,time,command --forest
