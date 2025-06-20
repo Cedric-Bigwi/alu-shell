@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# This script lists all running processes in user-oriented hierarchical format as expected
+# This script lists all running processes with full start time
 
-ps -eo user,start,command --forest
+LC_TIME=en_US.UTF-8 ps -eo user,start,command --forest
