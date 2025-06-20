@@ -1,2 +1,2 @@
 #!/bin/bash
-# This one needs to be implemented manually for base conversion logic
+echo $(( ${WATER//[^0-9]/} + ${STIR//[^0-9]/} ))
