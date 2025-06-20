@@ -1,2 +1,2 @@
 #!/bin/bash
-readarray -t a; for i in ${!a[@]}; do if [ $((i%2)) -eq 0 ]; then echo ${a[$i]}; fi; done
+perl -ne 'print if $. % 2 == 1'
