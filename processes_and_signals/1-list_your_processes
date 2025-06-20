@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-# Script to list all running processes for all users in a user-friendly format showing process hierarchy
+# Display all running processes for all users with hierarchy
 
-ps -eo user,lstart,command --forest | tail -n +2 | while read -r user _ _ _ time _ rest; do
-    echo "$user $time $rest"
-done
+ps -ef --forest
