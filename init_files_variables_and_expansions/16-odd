@@ -1,2 +1,2 @@
 #!/bin/bash
-awk 'NR%2'
+readarray -t a; for i in ${!a[@]}; do if [ $((i%2)) -eq 0 ]; then echo ${a[$i]}; fi; done
