@@ -1,2 +1,2 @@
 #!/bin/bash
-(find . -type f -name "*.gif" | rev | cut -d/ -f1 | cut -d. -f2- | rev | grep '^\.' | sort -f; find . -type f -name "*.gif" | rev | cut -d/ -f1 | cut -d. -f2- | rev | grep -v '^\.' | sort -f)
+find . -type f -name "*.gif" | rev | cut -d/ -f1 | cut -d. -f2- | rev | LC_COLLATE=C sort -f
