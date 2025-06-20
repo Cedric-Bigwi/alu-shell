@@ -1,1 +1,2 @@
-wc -c < file
+#!/bin/bash
+echo "Best School" > \\\\\\\"'\"Best School\"\\'"\\\\\\$\\\?\\\\\\\\\\\\\\\*\:\)
